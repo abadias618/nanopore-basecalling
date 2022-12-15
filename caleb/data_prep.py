@@ -16,6 +16,8 @@ import shutil
 df = pd.read_csv('archive/HAM10000_metadata.csv')
 
 df = df[['image_id','dx']]
+
+'''
 types = set(df['dx'])
 dataDir = 'data/'
 trainDir = dataDir + 'train/'
@@ -46,7 +48,46 @@ for type in types:
         source = allDataDir + img
         destination = testDir + type + '/' + img
         dest = shutil.copyfile(source, destination)
+#'''
+#'''
+cancers = {'bkl':'nonCancer',
+           'df':'nonCancer',
+           'vasc':'nonCancer',
+           'nv':'nonCancer',
+           'bcc':'cancer',
+           'akiec':'cancer',
+           'mel':'cancer',}
+types = set(df['dx'])
+dataDir = 'data/'
+trainDir = dataDir + 'train/'
+testDir = dataDir + 'test/'
+typeDirs = [f'{x}/' for x in sorted(types)]
+if not os.path.exists(dataDir): os.mkdir(dataDir)
+if not os.path.exists(trainDir): os.mkdir(trainDir)
+if not os.path.exists(testDir): os.mkdir(testDir)
+if not os.path.exists(trainDir + 'cancer/'): os.mkdir(trainDir + 'cancer/')
+if not os.path.exists(trainDir + 'nonCancer/'): os.mkdir(trainDir + 'nonCancer/')
+if not os.path.exists(testDir + 'cancer/'): os.mkdir(testDir + 'cancer/')
+if not os.path.exists(testDir + 'nonCancer/'): os.mkdir(testDir + 'nonCancer/')
 
+allDataDir = 'archive/lesion_images/all_images/'
+#random.shuffle()
+gp = df.groupby('dx')
+allImages = {x:list(gp.get_group(x)['image_id']) for x in types}
 
+for type in types:
+    random.shuffle(allImages[type])
+    tempImgs = allImages[type]
+    for y in tempImgs[:(len(tempImgs)//5)*4]:
+        img = y + '.jpg'
+        source = allDataDir + img
+        destination = trainDir + cancers[type] + '/' + img
+        dest = shutil.copyfile(source, destination)
+    for y in tempImgs[(len(tempImgs)//5)*4:]:
+        img = y + '.jpg'
+        source = allDataDir + img
+        destination = testDir + cancers[type] + '/' + img
+        dest = shutil.copyfile(source, destination)
+#'''
 
 print(df.head())
