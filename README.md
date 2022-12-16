@@ -62,6 +62,7 @@ We approached our model generation from 2 different model architectures with 2 d
 ├── HAM10000_metadata.csv
 ├── hmnist_28_28_L.csv
 ├── hmnist_28_28_RGB.csv
+├── hmnist_28_28_RGB_binary.csv
 ├── hmnist_8_8_L.csv
 ├── hmnist_8_8_RGB.csv
 └── lesion_images
@@ -69,6 +70,27 @@ We approached our model generation from 2 different model architectures with 2 d
 ```
 
 # Results
+
+## Multi Class DenseNet (Original)
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/densenet_multi_accuracy.png)
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/densenet_multi_confussion_matrix.png)
+
+## Multi Class Mix
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/mix_multi_accuracy.png)
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/mix_multi_confusion_matrix.png)
+
+## Binary DenseNet 
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/densenet_binary_accuracy.png)
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/densenet_binary_confussion_matrix.png)
+
+## Binary Mix
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/mix_binary_accuracy.png)
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/mix_binary_confusion_matrix.png)
+
+
+
+
+
 
 # Future Work
 We were inspired by Mahbod et al. to used pertained models to used multiple pre-trained models to generate feature maps that would be fed into our classifier. However, in there work, they included an additional step of training an SVM classifier at the end of each pre-trained model. We, on the other hand, simply concatenated our feature maps and fed them into our fully connected classifier. It would have been interesting to train classifiers for each pre-trained model, and then combine them to get a prediction.
