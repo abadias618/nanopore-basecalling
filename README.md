@@ -32,7 +32,7 @@ This dataset contains 10015 dermatoscopic images of pigmented lesions for patien
 
 The categories include; Actinic keratoses and intraepithelial carcinoma / Bowen's disease (AKIEC), basal cell carcinoma (BCC), benign keratosis-like lesions (solar lentigines / seborrheic keratoses and lichen-planus like keratoses, BKL), dermatofibroma (DF), melanoma (MEL), melanocytic nevi (NV) vascular lesions (angiomas, angiokeratomas, pyogenic granulomas and hemorrhage, VASC). Of these categories, 3 are cancerous (BCC, AKIEC, MEL) and 4 are non-cancerous (BKL, DF, VASC, NV).
 
-<img width="1092" alt="Screen Shot 2022-12-16 at 12 33 00 PM" src="https://user-images.githubusercontent.com/11773171/208175014-c1d3f4be-c099-48fc-8eb8-05b9518d5de7.png">
+![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/skin_ex.png)
 
 # Model Experimentation Description
 We approached our model generation from 2 different model architectures with 2 different data preparations, resulting in 4 different model runs.
