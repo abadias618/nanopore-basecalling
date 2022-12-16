@@ -80,7 +80,7 @@ These were the final accuracies for each of the runs.
 
 It appears that changing the problem to a binary classification improves the accuracy of the classifier. This is encouraging, as the primary intent of our program is to reduce the likelihood for mistaking a non-cancerous lesion for a cancerous lesion generally. While identifying the specific subtype and implied danger level is important, this may be best confirmed by a medical professional who can recommend proper medical treatment. 
 
-Furthermore, it appears that mixing ResNest and DenseNet pre-trained classifiers did not appear to help the accuracy for either binary or multi class.
+Furthermore, it appears that mixing ResNest and DenseNet pre-trained classifiers does not significantly alter the accuracy for either binary or multi class categorization. See Future Works for potential future considerations for improving the accuracy of these models.
 
 ## Multi Class DenseNet (Original)
 ![alt text](https://github.com/abadias618/nanopore-basecalling/blob/main/images/densenet_multi_accuracy.png)
