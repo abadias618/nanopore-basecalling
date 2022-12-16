@@ -73,12 +73,12 @@ We approached our model generation from 2 different model architectures with 2 d
 
 These were the final accuracies for each of the runs.
 
-DenseNet, multi class: 0.8248
-Mix, multi class: 0.8208
-DenseNet, binary: 0.8867
-Mix, binary: 0.8877
+- DenseNet, multi class: 0.8248
+- Mix, multi class: 0.8208
+- DenseNet, binary: 0.8867
+- Mix, binary: 0.8877
 
-It appears that changing the problem to a binary classification improves the accuracy of the classifier. This is encouraging, as the primary intent of our program is to reduce the likelihood for mistaking a non-cancerous lesion for a cancerous lesion generally. While identifying the specific subtype and implied danger levels is important, this may be best confirmed by medical professional who can recommend proper medical treatment. 
+It appears that changing the problem to a binary classification improves the accuracy of the classifier. This is encouraging, as the primary intent of our program is to reduce the likelihood for mistaking a non-cancerous lesion for a cancerous lesion generally. While identifying the specific subtype and implied danger level is important, this may be best confirmed by a medical professional who can recommend proper medical treatment. 
 
 Furthermore, it appears that mixing ResNest and DenseNet pre-trained classifiers did not appear to help the accuracy for either binary or multi class.
 
