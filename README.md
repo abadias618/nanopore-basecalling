@@ -20,6 +20,7 @@ Data:[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham1000
 -  [Results](#results)
 -  [Future Work](#future-work)
 -  [Contributing](#contributing)
+-  [Background: Project Hard Pivot](#background-project-hard-pivot)
 -  [Acknowledgments](#acknowledgments)
 
 # Project Background
@@ -128,7 +129,7 @@ do_train(cfg, model, train_loader, val_loader, optimizer, None, F.cross_entropy)
 # Contributing
 Any kind of enhancement or contribution is welcomed.
 
-# Project Hard Pivot - Background
+# Background: Project Hard Pivot
 We originally proposed as our course project to generate a deep learning model for basecalling raw nanopore sequencing data. We investigated and attempted to run the [SACall](https://github.com/huangnengCSU/SACall-basecaller) repository as a starting point, as they employ transformers, an element of deep learning all project members are interested in. As a backup, we attempted to run [bonito](https://github.com/nanoporetech/bonito), the standard Oxford Nanopore basecaller, for generating models. In both cases, we ran into a number of errors over the course of a week and never succeeded generating a deep learning model using raw data. As such, we requested approval for changing our project to what is listed above.
 
 # Acknowledgments
