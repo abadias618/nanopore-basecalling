@@ -2,6 +2,8 @@
 Project for **CS6553** Deep Learning
 Data:[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000?resource=download)
 
+# Project Member Team Names
+Abdias Baldiviezoaguilar, Sam Himes, Caleb Cranney
 
 **Initially our project was related to nanopore-basecalling, after many hours of work and debug, we reconsidered and shifted our focus to a another area: Skin Cancer Detection/Classification.**
 
@@ -50,8 +52,8 @@ We approached our model generation from 2 different model architectures with 2 d
 ## Model Notebook Links
 
 1. [densnet121, Categorization](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Densenet_multiclassifier.ipynb)
-2. [densenet121/resnet18 hybrid, Categorization](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Densenet_binary_classifier.ipynb)
-3. [densnet121, Binary](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Mix_multiclassifier.ipynb)
+2. [densenet121/resnet18 hybrid, Categorization](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Mix_multiclassifier.ipynb)
+3. [densnet121, Binary](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Densenet_binary_classifier.ipynb)
 4. [densnet121/resnet18 hybrid, Binary](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Mix_binary_classifier.ipynb)
 
 # Expected Data Structure after downloading from source
