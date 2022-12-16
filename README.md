@@ -23,7 +23,7 @@ Data:[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham1000
 -  [Acknowledgments](#acknowledgments)
 
 # Project Background
-Pigmented skin lesions can be an indication of skin cancer. However, it is not a guarantee by any means - many such lesions are almost entirely benign. The dataset for this project was comprised of various images of pigmented skin lesions that were categorized by various benign or malignant classes. Our intent is to generate a deep learning model that can accurately predict the type of pigmented skin lesion of any given image.
+Skin Cancer is an extremely prevalent form of cancer. In the US, about 9,500 people in the US are diagnosed with skin cancer every day. When detected early, patients with skin cancer have an extremely high survival rate. Steps should be taken to improve the accessibility of early detection. With an accurate deep learning model, patients could take pictures of their own skin abnormalities and detect cancer early. We aim to modify a deep learning model to more accurately classify cancer.
 
 # Data Description
 This dataset contains 10015 dermatoscopic images of pigmented lesions for patients in 7 diagnostic categories. For more than half of the subjects, the diagnosis was confirmed through histopathology and for the rest of the patience through follow-up examinations, expert consensus, or by in-vivo confocal microscopy. More information about the dataset and the diagnosis categories, features and patience conditions besides the links to download the dataset can be found on either [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T) or on [Kaggle](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000/home).
