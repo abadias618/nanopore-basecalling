@@ -15,7 +15,6 @@ Data:[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham1000
 -  [Project Background](#project-background)
 -  [Data Description](#data-description)
 -  [Model Experimentation Description](#model-experimentation-description)
--  [Summary of Model Generation Instruction](#summary-of-model-generation-instruction)
 -  [Expected Data Structure after downloading from source](#expected-data-structure-after-downloading-from-source)
 -  [Results](#results)
 -  [Future Work](#future-work)
@@ -30,6 +29,8 @@ Skin Cancer is an extremely prevalent form of cancer. In the US, about 9,500 peo
 This dataset contains 10015 dermatoscopic images of pigmented lesions for patients in 7 diagnostic categories. For more than half of the subjects, the diagnosis was confirmed through histopathology and for the rest of the patience through follow-up examinations, expert consensus, or by in-vivo confocal microscopy. More information about the dataset and the diagnosis categories, features and patience conditions besides the links to download the dataset can be found on either [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T) or on [Kaggle](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000/home).
 
 The categories include; Actinic keratoses and intraepithelial carcinoma / Bowen's disease (AKIEC), basal cell carcinoma (BCC), benign keratosis-like lesions (solar lentigines / seborrheic keratoses and lichen-planus like keratoses, BKL), dermatofibroma (DF), melanoma (MEL), melanocytic nevi (NV) vascular lesions (angiomas, angiokeratomas, pyogenic granulomas and hemorrhage, VASC). Of these categories, 3 are cancerous (BCC, AKIEC, MEL) and 4 are non-cancerous (BKL, DF, VASC, NV).
+
+<img width="1092" alt="Screen Shot 2022-12-16 at 12 33 00 PM" src="https://user-images.githubusercontent.com/11773171/208175014-c1d3f4be-c099-48fc-8eb8-05b9518d5de7.png">
 
 # Model Experimentation Description
 We approached our model generation from 2 different model architectures with 2 different data preparations, resulting in 4 different model runs.
@@ -46,69 +47,12 @@ We approached our model generation from 2 different model architectures with 2 d
 
 2. Binary - we determined which of the 7 categories were considered malignant and which were considered benign (sometimes labelled in the code as "cancer" and "nonCancer," respectively) and set up the models for binary classification between these two classes instead of all seven.
 
-## Model Experiment Notebook Links
+## Model Notebook Links
 
-1. [densnet121, Categorization]()
-2. [densenet121/resnet18 hybrid, Categorization]()
-3. [densnet121, Binary]()
-4. [densnet121/resnet18 hybrid, Binary]()
-
-# Summary of Model Generation Instruction 
-In a nutshell here's how to use this template, so **for example** assume you want to implement ResNet-18 to train mnist, so you should do the following:
-- In `modeling`  folder create a python file named whatever you like, here we named it `example_model.py` . In `modeling/__init__.py` file, you can build a function named `build_model` to call your model.
-
-```python
-from .example_model import ResNet18
-
-def build_model(cfg):
-    model = ResNet18(cfg.MODEL.NUM_CLASSES)
-    return model
-``` 
-
-   
-- In `engine`  folder create a model trainer function and inference function. In trainer function, you need to write the logic of the training process, you can use some third-party library to decrease the repeated stuff.
-
-```python
-# trainer
-def do_train(cfg, model, train_loader, val_loader, optimizer, scheduler, loss_fn):
- """
- implement the logic of epoch:
- -loop on the number of iterations in the config and call the train step
- -add any summaries you want using the summary
- """
-pass
-
-# inference
-def inference(cfg, model, val_loader):
-"""
-implement the logic of the train step
-- run the tensorflow session
-- return any metrics you need to summarize
- """
-pass
-```
-
-- In `tools`  folder, you create the `train.py` .  In this file, you need to get the instances of the following objects "Model",  "DataLoader”, “Optimizer”, and config
-```python
-# create instance of the model you want
-model = build_model(cfg)
-
-# create your data generator
-train_loader = make_data_loader(cfg, is_train=True)
-val_loader = make_data_loader(cfg, is_train=False)
-
-# create your model optimizer
-optimizer = make_optimizer(cfg, model)
-```
-
-- Pass the all these objects to the function `do_train` , and start your training
-```python
-# here you train your model
-do_train(cfg, model, train_loader, val_loader, optimizer, None, F.cross_entropy)
-```
-
-**You will find a template file and a simple example in the model and trainer folder that shows you how to try your first model simply.**
-
+1. [densnet121, Categorization](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Densenet_multiclassifier.ipynb)
+2. [densenet121/resnet18 hybrid, Categorization](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Densenet_binary_classifier.ipynb)
+3. [densnet121, Binary](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Mix_multiclassifier.ipynb)
+4. [densnet121/resnet18 hybrid, Binary](https://github.com/abadias618/nanopore-basecalling/blob/main/notebooks/Mix_binary_classifier.ipynb)
 
 # Expected Data Structure after downloading from source
 ```
