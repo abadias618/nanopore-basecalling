@@ -125,6 +125,9 @@ do_train(cfg, model, train_loader, val_loader, optimizer, None, F.cross_entropy)
 # Results
 
 # Future Work
+We were inspired by Mahbod et al. to used pertained models to used multiple pre-trained models to generate feature maps that would be fed into our classifier. However, in there work, they included an additional step of training an SVM classifier at the end of each pre-trained model. We, on the other hand, simply concatenated our feature maps and fed them into our fully connected classifier. It would have been interesting to train classifiers for each pre-trained model, and then combine them to get a prediction.
+
+Additionally, it would be interesting to test a variety of combinations of pre-trained networks. Due to time constraints we could only combine DenseNet and ResNet, but it would be interesting to see if combinations of other pre-trained networks faired better or worse.
 
 # Contributing
 Any kind of enhancement or contribution is welcomed.
